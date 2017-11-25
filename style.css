@@ -1,0 +1,115 @@
+.container-container-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 650px;
+  flex-wrap: nowrap;
+}
+.container-wrapper-left {
+  position: relative;
+  padding: 10px;
+  width: 300px;
+  display: flex;
+  border: 2px solid black;
+  background-color: lightblue;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+.container-induvidual {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: auto;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  border: 1px solid black;
+}
+
+.container-induvidual:hover .circle {
+  background-color: red;
+  cursor: pointer;
+  animation-name: enlarge;
+  animation-duration: 50ms;
+  animation-fill-mode: both;
+}
+@keyframes enlarge {
+  from {
+    height: 45px;
+    width: 45px;
+  }
+  to {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.container-induvidual:hover .component {
+  cursor: pointer;
+  background-color: darkslateblue;
+}
+
+.component {
+  width: 50px;
+  border: 1px solid black;
+  height: 50px;
+  margin: 2px;
+}
+
+.component:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
+/*
+right side
+*/
+
+.rectangular-box {
+  border: 1px solid black;
+  flex: 1;
+  text-align: center;
+  transition: 0.3s;
+  max-width: 20%;
+  padding: 8em 0;
+  background-color: #ccc;
+  min-width: 10%;
+}
+
+.rectangular-box:hover {
+  transition: 0.5s;
+  max-width: 40% !important;
+  background: #333;
+  flex-grow: 2;
+  cursor: pointer;
+  color: #fff;
+}
+
+.rectangular-box:hover::after {
+  content: attr(data-descr);
+  transition: 0.3s;
+}
+
+/* 
+.rectangular-box1 {
+  height: 200px;
+  flex-grow: 1;
+
+  border: 1px solid black;
+  flex-basis: 100px;
+} */
+
+.container-wrapper-right {
+  /* position: relative; */
+  padding: 10px;
+  width: 400px;
+  display: flex;
+  border: 2px solid black;
+  background-color: lightblue;
+  flex-direction: row;
+}
