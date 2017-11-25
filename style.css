@@ -7,7 +7,7 @@
 .container-wrapper-left {
   position: relative;
   padding: 10px;
-  width: 300px;
+  width: 600px;
   display: flex;
   border: 2px solid black;
   background-color: lightblue;
@@ -16,7 +16,9 @@
   flex-wrap: nowrap;
 }
 
-.container-induvidual {
+.container-induvidual,
+.container-induvidual-click {
+  padding: 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -25,23 +27,37 @@
 }
 
 .circle {
+  margin: 5px;
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
 }
 
-.container-induvidual:hover .circle {
+.circle:hover {
+  cursor: pointer;
+}
+
+/* .container-induvidual .circle:hover {
+  background-color: red;
+  cursor: pointer;
+  animation-name: enlarge;
+  animation-duration: 50ms;
+  animation-fill-mode: both;
+} */
+
+.container-induvidual-click .circle {
   background-color: red;
   cursor: pointer;
   animation-name: enlarge;
   animation-duration: 50ms;
   animation-fill-mode: both;
 }
+
 @keyframes enlarge {
   from {
-    height: 45px;
-    width: 45px;
+    height: 40px;
+    width: 40px;
   }
   to {
     height: 50px;
@@ -49,20 +65,25 @@
   }
 }
 
-.container-induvidual:hover .component {
+/* .container-induvidual .component:hover {
+  cursor: pointer;
+  background-color: darkslateblue;
+} */
+
+.container-induvidual-click .component {
   cursor: pointer;
   background-color: darkslateblue;
 }
 
 .component {
-  width: 50px;
+  min-width: 20%;
   border: 1px solid black;
-  height: 50px;
+  min-height: 100% !important;
   margin: 2px;
 }
 
 .component:hover {
-  background-color: red;
+  /* background-color: red; */
   cursor: pointer;
 }
 
@@ -75,25 +96,36 @@ right side
   flex: 1;
   text-align: center;
   transition: 0.3s;
-  max-width: 20%;
+  max-width: 15%;
   padding: 8em 0;
   background-color: #ccc;
   min-width: 10%;
 }
 
-.rectangular-box:hover {
+.rectangular-box-hover {
+  border: 1px solid black;
+  text-align: center;
+  padding: 8em 0;
   transition: 0.5s;
-  max-width: 40% !important;
+  max-width: 80% !important;
+  background: #333;
+  flex-grow: 2;
+  color: #fff;
+}
+
+/* .rectangular-box:hover {
+  transition: 0.5s;
+  max-width: 80% !important;
   background: #333;
   flex-grow: 2;
   cursor: pointer;
   color: #fff;
-}
+} */
 
-.rectangular-box:hover::after {
+/* .rectangular-box:hover::after {
   content: attr(data-descr);
   transition: 0.3s;
-}
+} */
 
 /* 
 .rectangular-box1 {
